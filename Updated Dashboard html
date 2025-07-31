@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VSXchangeZA Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">VSXchangeZA</div>
+    <input type="text" placeholder="Search..." class="search-box" />
+    <ul class="nav-links">
+      <li>Home</li>
+      <li>Messages</li>
+      <li>Explore</li>
+      <li>Profile</li>
+      <li>Settings</li>
+      <li>Logout</li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="user-profile">
+        <img src="user-avatar.png" alt="User Avatar" class="avatar" />
+        <h3>Welcome, User!</h3>
+        <button class="create-post-btn">+ Create Post</button>
+        <ul>
+          <li>My Skills</li>
+          <li>My Listings</li>
+          <li>Exchange Requests</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <form id="postForm">
+        <textarea placeholder="Share your work, video, or insight..."></textarea>
+        <input type="file" id="fileInput" accept="image/*,video/*" />
+        <button type="submit">Post</button>
+      </form>
+
+      <div id="feed">
+        <div class="post">
+          <div class="post-header">
+            <img src="avatar.png" class="post-avatar" alt="Jane Doe Avatar" />
+            <div>
+              <h4>Jane Doe</h4>
+              <p>Frontend Developer • Cape Town</p>
+            </div>
+          </div>
+          <p class="post-text">Here's a simple landing page I made in 3 hours 🚀</p>
+          <div class="post-media">
+            <img src="sample-work.jpg" alt="Sample work" />
+          </div>
+          <div class="post-actions">
+            <button class="approve-btn">Approve ❤️🤝</button>
+            <button class="comment-btn">Comment 💬</button>
+            <button class="share-btn">Share 🔁</button>
+            <button class="collaborate-btn">Collaborate 🤝</button>
+          </div>
+          <div class="comment-section">
+            <input type="text" placeholder="Write a comment..." class="comment-input" />
+            <div class="comments"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
