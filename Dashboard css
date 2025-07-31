@@ -1,0 +1,15 @@
+.collaborate-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.collaborate-btn:hover {
+  background-color: #3e8e41;
+}
