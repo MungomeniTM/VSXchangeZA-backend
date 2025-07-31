@@ -1,0 +1,34 @@
+document.getElementById("locationSearchBtn").addEventListener("click", function () {
+  const location = document.getElementById("locationInput").value.toLowerCase();
+  const skill = document.getElementById("skillInput").value.toLowerCase();
+  const resultsDiv = document.getElementById("searchResults");
+
+  // Mocked skilled people (replace this with real data/API later)
+  const people = [
+    { name: "Thabo Mokoena", location: "soweto", skill: "electrician" },
+    { name: "Lerato Dlamini", location: "sandton", skill: "plumber" },
+    { name: "Sipho Nkosi", location: "soweto", skill: "builder" },
+    { name: "Zanele Khumalo", location: "durban", skill: "tiler" }
+  ];
+
+  const filtered = people.filter(person =>
+    person.location.includes(location) && person.skill.includes(skill)
+  );
+
+  resultsDiv.innerHTML = ""; // Clear previous results
+
+  if (filtered.length === 0) {
+    resultsDiv.innerHTML = "<p>No skilled people found nearby.</p>";
+  } else {
+    filtered.forEach(person => {
+      const card = document.createElement("div");
+      card.className = "search-result-card";
+      card.innerHTML = `
+        <h4>${person.name}</h4>
+        <p>📍 Location: ${person.location}</p>
+        <p>🛠️ Skill: ${person.skill}</p>
+      `;
+      resultsDiv.appendChild(card);
+    });
+  }
+});
