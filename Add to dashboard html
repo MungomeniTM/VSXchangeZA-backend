@@ -1,0 +1,4 @@
+<input id="locationInput" placeholder="Enter location" />
+<input id="skillInput" placeholder="Enter skill" />
+<button id="locationSearchBtn">Find Skilled People Nearby</button>
+<div id="searchResults"></div>
