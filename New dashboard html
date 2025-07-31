@@ -1,0 +1,6 @@
+<div class="search-bar-container">
+  <input type="text" id="locationInput" placeholder="📍 Enter location" />
+  <input type="text" id="skillInput" placeholder="🛠️ Enter skill" />
+  <button id="locationSearchBtn">🔍 Find Skilled People Nearby</button>
+</div>
+<div id="searchResults"></div>
