@@ -1,0 +1,3 @@
+<!-- Inside a user card or profile section -->
+<button class="collaborate-btn" onclick="sendCollaborateRequest('USER_ID_HERE')">Collaborate 🤝</button>
+<div id="collab-message"></div>
