@@ -1,0 +1,154 @@
+document.getElementById('postForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const textarea = this.querySelector('textarea');
+  const text = textarea.value.trim();
+  const fileInput = document.getElementById('fileInput');
+  const file = fileInput.files[0];
+
+  if (!text && !file) {
+    alert('Please enter some text or select a file to post.');
+    return;
+  }
+
+  const post = document.createElement('div');
+  post.classList.add('post');
+
+  // Sanitize text for safety (basic)
+  const escapeHTML = (str) =>
+    str.replace(/&/g, "&amp;")
+       .replace(/</g, "&lt;")
+       .replace(/>/g, "&gt;")
+       .replace(/"/g, "&quot;")
+       .replace(/'/g, "&#39;");
+
+  const safeText = escapeHTML(text).replace(/\n/g, '<br>');
+
+  post.innerHTML = `
+    <div class="post-header">
+      <img src="avatar.png" alt="You Avatar" class="post-avatar" />
+      <div>
+        <h4>You</h4>
+        <p>Builder • Polokwane</p>
+      </div>
+    </div>
+    <p class="post-text">${safeText}</p>
+    ${file ? `<div class="post-media">${createMediaElement(file)}</div>` : ''}
+    <div class="post-actions">
+      <button class="approve-btn">Approve ❤️🤝</button>
+      <button class="comment-btn">Comment 💬</button>
+      <button class="share-btn">Share 🔗</button>
+    </div>
+    <div class="comment-section" style="display:none;">
+      <input type="text" placeholder="Write a comment..." class="comment-input" />
+      <div class="comments"></div>
+    </div>
+  `;
+
+  document.getElementById('feed').prepend(post);
+  this.reset();
+
+  // Helper to create image or video preview
+  function createMediaElement(file) {
+    const type = file.type;
+    if (type.startsWith('image/')) {
+      return `<img src="${URL.createObjectURL(file)}" alt="Uploaded Image" />`;
+    } else if (type.startsWith('video/')) {
+      return `<video controls src="${URL.createObjectURL(file)}" style="max-width:100%; border-radius:10px;"></video>`;
+    } else {
+      return `<p>Unsupported media type</p>`;
+    }
+  }
+});
+
+// Delegate click events for buttons
+document.addEventListener('click', function (e) {
+  const target = e.target;
+
+  // Approve button logic
+  if (target.classList.contains('approve-btn')) {
+    if (!target.disabled) {
+      target.textContent = 'Approved ❤️🤝';
+      target.disabled = true;
+      target.style.color = '#22c55e'; // Green
+    }
+  }
+
+  // Comment button logic - toggle comment section
+  if (target.classList.contains('comment-btn')) {
+    const post = target.closest('.post');
+    const commentSection = post.querySelector('.comment-section');
+    if (commentSection.style.display === 'none' || !commentSection.style.display) {
+      commentSection.style.display = 'block';
+      commentSection.querySelector('.comment-input').focus();
+    } else {
+      commentSection.style.display = 'none';
+    }
+  }
+
+  // Share button logic - copy post URL (sample)
+  if (target.classList.contains('share-btn')) {
+    // For demo, just alert - implement actual share logic with backend or clipboard API
+    alert('Link copied! Share this post anywhere.');
+  }
+});
+
+// Handle comment input submission (Enter key)
+document.addEventListener('keypress', function (e) {
+  if (e.target.classList.contains('comment-input') && e.key === 'Enter') {
+    e.preventDefault();
+    const input = e.target;
+    const commentText = input.value.trim();
+    if (!commentText) return;
+
+    const commentsContainer = input.closest('.comment-section').querySelector('.comments');
+    const p = document.createElement('p');
+    p.textContent = `You: ${commentText}`;
+    commentsContainer.appendChild(p);
+    input.value = '';
+  }
+});
+document.addEventListener('click', function (e) {
+  const target = e.target;
+
+  if (target.classList.contains('approve-btn')) {
+    if (!target.disabled) {
+      target.textContent = 'Approved ❤️🤝';
+      target.disabled = true;
+      target.style.color = '#22c55e';
+    }
+  }
+
+  if (target.classList.contains('comment-btn')) {
+    const post = target.closest('.post');
+    const commentSection = post.querySelector('.comment-section');
+    commentSection.style.display = commentSection.style.display === 'block' ? 'none' : 'block';
+    commentSection.querySelector('.comment-input').focus();
+  }
+
+  if (target.classList.contains('share-btn')) {
+    alert('Link copied! Share this post anywhere.');
+  }
+
+  if (target.classList.contains('collaborate-btn')) {
+    alert('Collaboration request sent! 🤝');
+    target.textContent = 'Requested 🤝';
+    target.disabled = true;
+    target.style.color = '#0ea5e9';
+  }
+});
+
+document.addEventListener('keypress', function (e) {
+  if (e.target.classList.contains('comment-input') && e.key === 'Enter') {
+    e.preventDefault();
+    const input = e.target;
+    const commentText = input.value.trim();
+    if (!commentText) return;
+
+    const commentsContainer = input.closest('.comment-section').querySelector('.comments');
+    const p = document.createElement('p');
+    p.textContent = `You: ${commentText}`;
+    commentsContainer.appendChild(p);
+    input.value = '';
+  }
+});
