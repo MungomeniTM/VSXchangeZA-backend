@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings | VSXchangeZA</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <div class="settings-container">
+    <header class="settings-header">
+      <h1>Settings</h1>
+      <p>Customize your experience on VSXchangeZA</p>
+    </header>
+
+    <div class="settings-sections">
+      <!-- Account Settings -->
+      <section class="setting-block">
+        <h2>Account</h2>
+        <div class="setting-item">
+          <label>Username</label>
+          <input type="text" value="MatodziM" />
+        </div>
+        <div class="setting-item">
+          <label>Email</label>
+          <input type="email" value="matodzi@example.com" />
+        </div>
+        <div class="setting-item">
+          <label>Password</label>
+          <input type="password" placeholder="Change your password" />
+        </div>
+      </section>
+
+      <!-- Skill Preferences -->
+      <section class="setting-block">
+        <h2>Skill & Service Preferences</h2>
+        <div class="setting-item">
+          <label>I am a:</label>
+          <select>
+            <option value="skilled">Skilled Person</option>
+            <option value="client">Client</option>
+            <option value="both" selected>Both</option>
+          </select>
+        </div>
+        <div class="setting-item">
+          <label>Primary Skill</label>
+          <input type="text" placeholder="e.g. Plumber, Builder, Electrician..." />
+        </div>
+      </section>
+
+      <!-- Notifications -->
+      <section class="setting-block">
+        <h2>Notifications</h2>
+        <div class="setting-item toggle">
+          <label>App Notifications</label>
+          <input type="checkbox" checked />
+        </div>
+        <div class="setting-item toggle">
+          <label>Email Updates</label>
+          <input type="checkbox" />
+        </div>
+      </section>
+
+      <!-- Appearance -->
+      <section class="setting-block">
+        <h2>Appearance</h2>
+        <div class="setting-item toggle">
+          <label>Dark Mode</label>
+          <input type="checkbox" id="darkModeToggle" />
+        </div>
+      </section>
+
+      <!-- Privacy & Safety -->
+      <section class="setting-block">
+        <h2>Privacy & Safety</h2>
+        <div class="setting-item toggle">
+          <label>Show my profile publicly</label>
+          <input type="checkbox" checked />
+        </div>
+        <div class="setting-item toggle">
+          <label>Enable location-based visibility</label>
+          <input type="checkbox" checked />
+        </div>
+      </section>
+
+      <!-- Commitments -->
+      <section class="setting-block">
+        <h2>Ethical Commitments</h2>
+        <p class="ethics-note">
+          VSXchangeZA is committed to empowering youth, fostering transparency, and protecting your privacy.
+        </p>
+      </section>
+
+      <!-- Danger Zone -->
+      <section class="setting-block danger-zone">
+        <h2>Danger Zone</h2>
+        <button class="logout-btn">Logout</button>
+        <button class="delete-btn">Delete My Account</button>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    // Dark Mode Toggle
+    document.getElementById('darkModeToggle').addEventListener('
