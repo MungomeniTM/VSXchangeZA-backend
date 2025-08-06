@@ -1,0 +1,55 @@
+document.getElementById("searchForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const locationInput = document.getElementById("locationInput").value.trim().toLowerCase();
+  const skillInput = document.getElementById("skillInput").value.trim().toLowerCase();
+
+  // ✅ MOCK DATA for demo
+  const mockUsers = [
+    {
+      _id: "user123",
+      name: "Thabo Mokoena",
+      skill: "Electrician",
+      location: "Thohoyandou",
+    },
+    {
+      _id: "user456",
+      name: "Lerato Ndlovu",
+      skill: "Plumber",
+      location: "Shayandima",
+    },
+    {
+      _id: "user789",
+      name: "Sipho Khumalo",
+      skill: "Builder",
+      location: "Louis Trichardt",
+    },
+  ];
+
+  const resultsDiv = document.getElementById("searchResults");
+  resultsDiv.innerHTML = "";
+
+  const filtered = mockUsers.filter(
+    (user) =>
+      user.location.toLowerCase().includes(locationInput) &&
+      user.skill.toLowerCase().includes(skillInput)
+  );
+
+  if (filtered.length === 0) {
+    resultsDiv.innerHTML = `<p>No skilled people found for your search.</p>`;
+  } else {
+    filtered.forEach((user) => {
+      const el = document.createElement("div");
+      el.classList.add("search-card");
+      el.innerHTML = `
+        <div class="search-card-content">
+          <h3>${user.name}</h3>
+          <p><strong>Skill:</strong> ${user.skill}</p>
+          <p><strong>Location:</strong> ${user.location}</p>
+          <button class="view-btn" onclick="window.location.href='/profile/${user._id}'">View Profile</button>
+        </div>
+      `;
+      resultsDiv.appendChild(el);
+    });
+  }
+});
