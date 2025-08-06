@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search Skilled People - VSXchangeZA</title>
+  <link rel="stylesheet" href="search.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">VSXchangeZA</div>
+    <input type="text" placeholder="Search..." class="search-box" />
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Home</a></li>
+      <li><a href="messages.html">Messages</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="search-container">
+    <h2>Find Skilled People Nearby</h2>
+    <form id="searchForm">
+      <input type="text" id="locationInput" placeholder="Enter location" />
+      <input type="text" id="skillInput" placeholder="Enter skill" />
+      <button type="submit">Find</button>
+    </form>
+    <div id="searchResults"></div>
+  </div>
+
+  <script src="search.js"></script>
+</body>
+</html>
