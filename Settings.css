@@ -1,0 +1,198 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* NAVIGATION BAR */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-nav .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0a66c2;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background: #0a66c2;
+  color: #fff;
+}
+
+/* MAIN CONTAINER */
+.settings-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.settings-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* SECTION STYLES */
+.settings-section {
+  margin-bottom: 35px;
+}
+
+.settings-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #0a66c2;
+  border-left: 4px solid #0a66c2;
+  padding-left: 10px;
+}
+
+.settings-section label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 5px;
+  color: #444;
+}
+
+.settings-section input[type="text"],
+.settings-section input[type="email"],
+.settings-section input[type="password"],
+.settings-section select {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: border-color 0.2s ease;
+}
+
+.settings-section input:focus,
+.settings-section select:focus {
+  border-color: #0a66c2;
+  outline: none;
+}
+
+/* TOGGLE SWITCHES */
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.toggle input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #0a66c2;
+}
+
+/* ETHICS SECTION */
+.ethics p {
+  font-size: 0.95rem;
+  color: #333;
+  background-color: #e7f3ff;
+  padding: 15px;
+  border-left: 5px solid #0a66c2;
+  border-radius: 8px;
+}
+
+/* DANGER ZONE */
+.danger-zone {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.btn-logout,
+.btn-delete {
+  padding: 12px 20px;
+  border: none;
+  font-size: 0.95rem;
+  margin-right: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-logout {
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn-logout:hover {
+  background-color: #ec971f;
+}
+
+.btn-delete:hover {
+  background-color: #c9302c;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .settings-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
