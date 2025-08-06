@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Profile - VSXchangeZA</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">VSXchangeZA</div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Home</a></li>
+      <li><a href="messages.html">Messages</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="profile.html" class="active">Profile</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <header class="profile-header">
+    <div class="profile-avatar">
+      <img src="user-avatar.png" alt="User Avatar">
+    </div>
+    <div class="profile-info">
+      <h1>Mulisa Mungomeni</h1>
+      <p>Location: Shayandima, Limpopo • Electrician</p>
+
+      <div class="role-select">
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+          <option value="skilled">Skilled Person</option>
+          <option value="client">Client</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <section class="portfolio">
+      <h2>Portfolio</h2>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <video controls>
+            <source src="project-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>Full house re-wiring in 2 days. Client: Makhado.</p>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="project-image.jpg" alt="Project Image">
+          <p>Installed solar panels for rural household.</p>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="project-image2.jpg" alt="Project Image">
+          <p>Industrial electrical upgrade — 3-phase system.</p>
+        </div>
+      </div>
+
+      <div class="upload-section">
+        <h3>Upload New Project</h3>
+        <input type="file" multiple />
+        <textarea placeholder="Describe your project..."></textarea>
+        <button>Upload to Portfolio</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="profile.js"></script>
+</body>
+</html>
