@@ -1,0 +1,67 @@
+// Sample mock user data
+const mockUsers = [
+  {
+    _id: "1",
+    name: "Thabo Mokoena",
+    skill: "Electrician",
+    location: "Johannesburg"
+  },
+  {
+    _id: "2",
+    name: "Ayanda Ndlovu",
+    skill: "Plumber",
+    location: "Durban"
+  },
+  {
+    _id: "3",
+    name: "Karabo Phiri",
+    skill: "Builder",
+    location: "Soweto"
+  },
+  {
+    _id: "4",
+    name: "Sibongile Maseko",
+    skill: "Electrician",
+    location: "Polokwane"
+  },
+  {
+    _id: "5",
+    name: "Mpho Netshiozwi",
+    skill: "Welder",
+    location: "Thohoyandou"
+  }
+];
+
+// Event listener for the search form
+document.getElementById("searchForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const location = document.getElementById("locationInput").value.trim().toLowerCase();
+  const skill = document.getElementById("skillInput").value.trim().toLowerCase();
+  const resultsDiv = document.getElementById("searchResults");
+
+  // Filter the mock data
+  const filtered = mockUsers.filter((user) => {
+    const locationMatch = user.location.toLowerCase().includes(location);
+    const skillMatch = user.skill.toLowerCase().includes(skill);
+    return locationMatch && skillMatch;
+  });
+
+  // Clear previous results
+  resultsDiv.innerHTML = "";
+
+  if (filtered.length === 0) {
+    resultsDiv.innerHTML = "<p>No skilled people found matching your search.</p>";
+  } else {
+    filtered.forEach((user) => {
+      const el = document.createElement("div");
+      el.classList.add("search-card");
+      el.innerHTML = `
+        <strong>${user.name}</strong><br>
+        Skill: ${user.skill}<br>
+        Location: ${user.location}<br>
+        <button onclick="alert('This would go to /profile/${user._id}')">View Profile</button>
+      `;
+      resultsDiv.appendChild(el);
+    });
+  }
+});
