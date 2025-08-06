@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings | VSXchangeZA</title>
+  <link rel="stylesheet" href="settings.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVIGATION TOP BAR -->
+  <nav class="top-nav">
+    <div class="logo">VSXchangeZA</div>
+    <ul class="nav-links">
+      <li><a href="dashboard.html">🏠 Home</a></li>
+      <li><a href="explore.html">🔍 Explore</a></li>
+      <li><a href="messages.html">💬 Messages</a></li>
+      <li><a href="profile.html">👤 Profile</a></li>
+      <li><a href="settings.html" class="active">⚙️ Settings</a></li>
+      <li><a href="logout.html">🚪 Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- SETTINGS MAIN CONTAINER -->
+  <div class="settings-container">
+    <h1>⚙️ Settings</h1>
+    <p class="subtitle">Personalize your VSXchangeZA experience</p>
+
+    <!-- Account Section -->
+    <section class="settings-section">
+      <h2>👤 Account Info</h2>
+      <label>Username</label>
+      <input type="text" value="your_username" />
+
+      <label>Email</label>
+      <input type="email" value="user@example.com" />
+
+      <label>Change Password</label>
+      <input type="password" placeholder="New password" />
+    </section>
+
+    <!-- User Role -->
+    <section class="settings-section">
+      <h2>🎯 Who Are You?</h2>
+      <label>Select your role</label>
+      <select>
+        <option value="skilled">Skilled Person</option>
+        <option value="client">Client</option>
+        <option value="both" selected>Both</option>
+      </select>
+    </section>
+
+    <!-- Notification Preferences -->
+    <section class="settings-section">
+      <h2>🔔 Notifications</h2>
+      <div class="toggle">
+        <label>Email Notifications</label>
+        <input type="checkbox" checked />
+      </div>
+      <div class="toggle">
+        <label>App Notifications</label>
+        <input type="checkbox" />
+      </div>
+    </section>
+
+    <!-- Visibility -->
+    <section class="settings-section">
+      <h2>🌍 Visibility & Location</h2>
+      <div class="toggle">
+        <label>Show Profile Publicly</label>
+        <input type="checkbox" checked />
+      </div>
+      <div class="toggle">
+        <label>Allow Location-based Recommendations</label>
+        <input type="checkbox" checked />
+      </div>
+    </section>
+
+    <!-- Appearance -->
+    <section class="settings-section">
+      <h2>🌓 Appearance</h2>
+      <div class="toggle">
+        <label>Dark Mode</label>
+        <input type="checkbox" id="darkModeToggle" />
+      </div>
+    </section>
+
+    <!-- Ethical & Impact Commitment -->
+    <section class="settings-section ethics">
+      <h2>✊ Commitment to Community</h2>
+      <p>
+        VSXchangeZA was built to empower skilled people and create jobs. Your data will never be sold. We prioritize safety, opportunity, and growth.
+      </p>
+    </section>
+
+    <!-- Danger Zone -->
+    <section class="settings-section danger-zone">
+      <h2>⚠️ Danger Zone</h2>
+      <button class="btn-logout">Logout</button>
+      <button class="btn-delete">Delete Account</button>
+    </section>
+  </div>
+
+  <script>
+    // Simple dark mode toggle logic
+    document.getElementById("darkModeToggle").addEventListener("change", function () {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>
