@@ -1,0 +1,2 @@
+const searchRoutes = require("./routes/search");
+app.use("/api/search", searchRoutes);
