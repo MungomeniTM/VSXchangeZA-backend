@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore - VSXchangeZA</title>
+  <link rel="stylesheet" href="explore.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">VSXchangeZA</div>
+    <input type="text" placeholder="Search..." class="search-box" />
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Home</a></li>
+      <li><a href="messages.html">Messages</a></li>
+      <li><a href="explore.html" class="active">Explore</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="search.html">Find Skilled People Nearby</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="user-profile">
+        <img src="user-avatar.png" alt="User Avatar" class="avatar" />
+        <h3>Welcome, User!</h3>
+        <button class="create-post-btn">+ Create Post</button>
+        <ul>
+          <li>My Skills</li>
+          <li>My Listings</li>
+          <li>Exchange Requests</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="explore-section">
+        <h2>Explore New Talent & Projects</h2>
+
+        <div class="explore-grid">
+          <div class="explore-card">
+            <img src="sample-work.jpg" alt="Work Sample" />
+            <h3>Modern Plumbing System</h3>
+            <p>By: Thabiso - Plumber • Soweto</p>
+          </div>
+          <div class="explore-card">
+            <img src="sample-work2.jpg" alt="Work Sample" />
+            <h3>Electrical Wiring for Office</h3>
+            <p>By: Zanele - Electrician • Durban</p>
+          </div>
+          <div class="explore-card">
+            <img src="sample-work3.jpg" alt="Work Sample" />
+            <h3>Interior Painting Project</h3>
+            <p>By: Katlego - Painter • Johannesburg</p>
+          </div>
+          <!-- Add more dynamically -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="explore.js"></script>
+</body>
+</html>
