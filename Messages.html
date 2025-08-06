@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Messages - VSXchangeZA</title>
+  <link rel="stylesheet" href="messages.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">VSXchangeZA</div>
+    <input type="text" placeholder="Search..." class="search-box" />
+    <ul class="nav-links">
+      <li><a href="dashboard.html">Home</a></li>
+      <li><a href="messages.html" class="active">Messages</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="search.html">Find Skilled People Nearby</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="user-profile">
+        <img src="user-avatar.png" alt="User Avatar" class="avatar" />
+        <h3>Welcome, User!</h3>
+        <button class="create-post-btn">+ Create Post</button>
+        <ul>
+          <li>My Skills</li>
+          <li>My Listings</li>
+          <li>Exchange Requests</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="messages-section">
+        <h2>Messages</h2>
+        <div class="chat-container">
+          <aside class="chat-sidebar">
+            <input type="text" placeholder="Search contacts..." class="chat-search" />
+            <ul class="chat-list" id="chatList">
+              <!-- Dynamically loaded chats -->
+              <li class="chat-user active">
+                <img src="avatar.png" class="chat-avatar" />
+                <div>
+                  <h4>Matodzi Magwabeni</h4>
+                  <p>Builder • Thohoyandou</p>
+                </div>
+              </li>
+              <li class="chat-user">
+                <img src="avatar.png" class="chat-avatar" />
+                <div>
+                  <h4>Mpho Nemutudi</h4>
+                  <p>Electrician • Polokwane</p>
+                </div>
+              </li>
+            </ul>
+          </aside>
+
+          <div class="chat-window">
+            <div class="chat-header">
+              <h3 id="chatWith">Chat with Matodzi Magwabeni</h3>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+              <!-- Messages will be displayed here -->
+              <div class="message received">
+                <p>Hi, are you available for a project in Shayandima?</p>
+              </div>
+              <div class="message sent">
+                <p>Yes! I can assist. Let’s discuss the scope.</p>
+              </div>
+            </div>
+
+            <div class="chat-input-container">
+              <input
+                type="text"
+                placeholder="Type your message..."
+                id="messageInput"
+              />
+              <button id="sendMessageBtn">Send</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="messages.js"></script>
+</body>
+</html>
