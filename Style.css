@@ -1,0 +1,154 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8f9fa;
+  color: #222;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.logo .za {
+  color: #27ae60;
+  font-weight: 900;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #27ae60;
+}
+
+.auth-btn {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: #1e874b;
+}
+
+.icons button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background: linear-gradient(135deg, #e6f3ec, #ffffff);
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.hero .highlight {
+  color: #27ae60;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #27ae60;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #1e874b;
+}
+
+/* Footer */
+.footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 1rem 0;
+  }
+}
+     
